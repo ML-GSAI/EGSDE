@@ -31,7 +31,6 @@ where afhq_dog_4m.pt is provided by [ILVR](https://github.com/jychoi118/ilvr_adm
 ```cat2dog_dse.pt```, ```wild2dog_dse.pt``` and ```male2female_dse.pt``` are pretrained classifier for domain-specific extractor on cat2dog, wild2dog and male2female task respectively.
 ```afhq_dse.pt``` is the pretrained three-class classifier on AFHQ used for multi-domain translation. 
 ```256x256_classifier.pt``` is the pretrained classifier on ImageNet provided in [guided-diffusion](https://github.com/openai/guided-diffusion) used for initial weight of classifier.
-The code for re-training score-based diffusion model is available at [guided-diffusion](https://github.com/openai/guided-diffusion) or [ddim](https://github.com/ermongroup/ddim).
 ## Run EGSDE for Two-Domain Image Translation
 
 ```
@@ -63,6 +62,8 @@ $ python run_train_dse.py
 ```data_path``` is the data path, ```num class``` is the number of domains and ```iterations``` is the training iterations. 
 Other default args is in create_argparser(), where ```pretrained_model``` is the path of used pretrained classifier provided in [guided-diffusion](https://github.com/openai/guided-diffusion) and we have also uploaded it previous [pretrained model](https://drive.google.com/drive/folders/1awa0vkcWhd9LIEiS9VtGTwO5hI4WEI3G?usp=sharing) link. 
 If you want to train domain-specific extractor from scratch, just set ```pretrained``` False and you may need to increase the training iterations.
+## Re-training Score-based Diffusion Model
+The code for re-training score-based diffusion model is available at [guided-diffusion](https://github.com/openai/guided-diffusion) or [ddim](https://github.com/ermongroup/ddim).
 ## References
 If you find this repository helpful, please cite as:
 ```
