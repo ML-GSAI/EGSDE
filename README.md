@@ -26,17 +26,21 @@ pytorch>=1.9.0
 Please download the AFHQ and CelebA-HQ dataset following the dataset instructions in https://github.com/clovaai/stargan-v2 and put them in ```data/```. We also provide some demo images in ```data/``` for quick start.
 ## Pretrained Models
 All used pretrained models can be downloaded from [here](https://drive.google.com/drive/folders/1awa0vkcWhd9LIEiS9VtGTwO5hI4WEI3G?usp=sharing). Please put them in ```pretrained_model/```.
-The ```afhq_dog_4m.pt``` and ```celebahq_female_ddpm.pth``` are the pretrained diffusion models on dog on AFHQ and female on CelebA-HQ respectively, where afhq_dog_4m.pt is provided by [ILVR](https://github.com/jychoi118/ilvr_adm) and celebahq_female_ddpm.pth is trained by ourselves.
+The ```afhq_dog_4m.pt``` and ```celebahq_female_ddpm.pth``` are the pretrained diffusion models on dog on AFHQ and female on CelebA-HQ respectively, 
+where afhq_dog_4m.pt is provided by [ILVR](https://github.com/jychoi118/ilvr_adm) and celebahq_female_ddpm.pth is trained by ourselves based on [ddim](https://github.com/ermongroup/ddim).
 ```cat2dog_dse.pt```, ```wild2dog_dse.pt``` and ```male2female_dse.pt``` are pretrained classifier for domain-specific extractor on cat2dog, wild2dog and male2female task respectively.
 ```afhq_dse.pt``` is the pretrained three-class classifier on AFHQ used for multi-domain translation. 
 ```256x256_classifier.pt``` is the pretrained classifier on ImageNet provided in [guided-diffusion](https://github.com/openai/guided-diffusion) used for initial weight of classifier.
+The code for re-training score-based diffusion model is available at [guided-diffusion](https://github.com/openai/guided-diffusion) or [ddim](https://github.com/ermongroup/ddim).
 ## Run EGSDE for Two-Domain Image Translation
 
 ```
 $ python run_EGSDE.py
 ```
 ```task``` is which task to run and is chosen from ```cat2dog/wild2dog/male2female```. Take cat2dog as example, the resutls will be saved in ```runs/cat2dog```. The default args is provided in ```profiles/cat2dog/args.py```.
-* ```testdata_path``` is the path for source image. ```ckpt``` is the path for score-based diffusion model. ```dsepath``` is the path for domain-specific extractors.
+* ```testdata_path``` is the path for source image. ```ckpt``` is the path for score-based diffusion model. ```dsepath``` is the path for domain-specific extractors. 
+  ```diffusionmodel``` is the backbone of noise prediction network , where ```ADM``` support [guided-diffusion](https://github.com/openai/guided-diffusion) and ```DDPM``` support [ddim](https://github.com/ermongroup/ddim).
+
 * ```t``` is the initial time M. ```ls``` and ```li``` is the weight parameters. ```seed``` is the random seed.
 ## Run EGSDE for Multi-Domain Image Translation
 
