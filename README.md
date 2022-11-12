@@ -20,8 +20,14 @@ In principle, by defining different energy functions, EGSDE can be applied to ot
 ![image](figure/weight.png)
 ### The ablation studies of initial time M:
 ![image](figure/initial.png)
-## Requirements
-pytorch>=1.9.0
+## Dependencies
+```
+conda create -n EGSDE python=3.7
+conda activate EGSDE
+conda install pytorch==1.9.0 torchvision==0.10.0 torchaudio==0.9.0 cudatoolkit=10.2
+pip install pyyaml
+pip install scipy
+```
 ## Datasets
 Please download the AFHQ and CelebA-HQ dataset following the dataset instructions in https://github.com/clovaai/stargan-v2 and put them in ```data/```. We also provide some demo images in ```data/``` for quick start.
 ## Pretrained Models
