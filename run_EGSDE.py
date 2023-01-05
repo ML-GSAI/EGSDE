@@ -35,7 +35,7 @@ def run_egsde(task):
     runner.egsde()
 
 if __name__ == "__main__":
-    task = 'cat2dog'
+    task = 'male2female'
     run_egsde(task)
 
 

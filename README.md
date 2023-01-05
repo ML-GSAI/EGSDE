@@ -1,6 +1,6 @@
 # Energy-Guided Stochastic Differential Equations (EGSDE)
 This is the official implementation for [EGSDE: Unpaired Image-to-Image Translation via
-Energy-Guided Stochastic Differential Equations](https://arxiv.org/abs/2207.06635)  (Accepted in NIPS 2022).
+Energy-Guided Stochastic Differential Equations](https://arxiv.org/abs/2207.06635)  (Accepted in NIPS 2022). EGSDE has also been extended to the task of inverse molecular design: [Equivariant Enengy-guided SDE for Inverse Molecule Design](https://github.com/gracezhao1997/EEGSDE) already.
 ## Overview
 The key idea of EGSDE is to exploit an energy function with domain knowledge 
 to guide the inference process of a pretrained SDE for controllable generation.
