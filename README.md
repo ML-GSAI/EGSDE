@@ -24,7 +24,7 @@ In principle, by defining different energy functions, EGSDE can be applied to ot
 ```
 conda create -n EGSDE python=3.7
 conda activate EGSDE
-conda install pytorch==1.9.0 torchvision==0.10.0 torchaudio==0.9.0 cudatoolkit=10.2
+conda install -c pytorch pytorch==1.9.0 torchvision==0.10.0 torchaudio==0.9.0 cudatoolkit=10.2
 pip install pyyaml
 pip install scipy
 ```
